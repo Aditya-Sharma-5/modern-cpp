@@ -1,0 +1,28 @@
+Sometimes programmer write logics that can execute for multiple types of data
+ For E.g -> Linear Search can be used on STrings , collection of integers , Collections of vehicles , 
+            Collection of smartpointers to cars 
+
+ FOr e.g -> Print data function (any type of data for which << operator is overloaded will work )
+
+        std::cout<<10;
+        std::cout<<"Aadi;
+        std::cout<<data;   //list of values 
+
+
+Note : Code written by us (A TEMPLATE ) will generate more code for us later (TEMPLATE INSTANTIATION)
+
+    int num = 10; 
+    bool ans = IsEven(num);
+
+    // Part 1
+    if(ans){
+        std::cout<<"Square of number : "<<num*num<<"\n";   
+    }
+    else{
+        std::cout<<"Cube of number : "<<num*num*num<<"\n";
+    }
+    // Part 2
+    int fact_ans = Factorial(num);
+    std::cout<<fact_ans<<"\n";
+
+    return 0 ;

@@ -1,0 +1,118 @@
+
+        A system for employee management with the following charateristics-
+            A class with the following member attributes.
+                - id [string]
+                - name [string]
+                - Department --> Developer , HR , Marketing
+                - salary [float]
+                - location [string]
+                - experience [float]
+                - age [string]
+                - skillset [array / container of strings ]
+
+            Member function 
+                - Parametrized constructor for name , id , location
+                - Parametrized constructor for all attributes
+                - Copy and Move semantics are disabled 
+                - << operator overload 
+                - + operator for adding experience of 2 employee instance and return combined experience 
+
+            Create functionalities 
+                - Create Object which can Create atleast 3 instance of employees on heap managed by raw pointer 
+                - A function to find the average salary for employees
+                - A function to find the department of the employee and return it based on employee ID 
+                - A function to return a boolean to indicate whether all employee have experience bove 5.0 
+                - A function to return the skillset container for the employee with maximum salary . If multiple 
+                  employees have the same max salary , consider first max .
+                - A function to delete/deallocate the heap memory 
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+bind keyword : 
+
+
+A lamda is not a function , it is treated as a object callable ----------- functors
+
+Ques : 
+Create a class Vehicle with the following attributes 
+    - m_vehicle_reg_number  which is a string 
+    - m_vehicle_price which is a float 
+    - m_vehicle_type which is a T_PERMIT , RENTAL , PERSONAL
+    - m_vehicle_chassis_length which is a float 
+    - m_vehicle_chassis_width which is a float 
+    - m_vehicle_transmission_type which is either AMT ,  MANUAL , IMT , CVT , DC_AUTOMATIC.
+    - m_vehicle_fuel_type which is either PETROL , DIESEL , ALTERNATIVE_FUEL
+    - m_engine_ref which is a reference wrapper to an instance of Engine created on the stack 
+
+A class called Engine with the following attributes
+    - m_engineHorse_power which is int
+    - m_engine_torque which is float
+
+Create the following functionalities 
+    1) Ability to create at least 4 Vehicle Objects on the heap and store them in a list 
+    2) Ability to return a container of pointers to filtered vehicle Objects. The filterations will be 
+        based on --> 
+                on a predicate function passed as an arguement to the function 
+                [Hint: Allow caller of the function to filter data based on their own custom logic]
+    3) Ability to find and return the m_vehicle_transmission_type for the m_vehicle_reg_number passed a
+        an arguement.
+    4) Ability to calculate the tax on each vehicle based on a "calculate logic" passed as a lambda parameter 
+        to this function 
+    5)Ability to find and return a container of Vehicle poinyter whose m_engine_torque value is above a 
+        threshold passed as a parameter
+
+    Example : Fn(data , 90.1f) means function should find and return Vehicle pointers where m_engine_torque
+                is above 90.1f.
+
+In the function : 
+    - Create a function to find the functionality 5 such that threshold is set at 100.0f.
+    - Create a container of "FILTERING PREDICATES" that can be applied on data is functionality 2 described above 
+    - Write appropriate code to demonstrate each functionality . Use Custom exceptions wherever applicable . 
+    
+
+----------------------------------------------------------------------------------------------------------------------------------
+create a class Employee with folowing attributes:
+ 
+    -> m_eid which is a string
+    -> m_salary which is a float
+    -> m_department which is either HR,ADMIN or DEVELOPER
+    -> m_age which is a positive integer value
+    -> A fucntion CalculatePF which return
+        -> 10% of m_salary for HR and ADMIN
+        -> 20% of m_salary for DEVELOPER instaces
+ 
+create a class BusinessOwner with the following attributes:
+ 
+    -> m_registered_name which is a string value.
+    -> m_businessType which is either PVT_LTD, PP, LLP
+    -> m_business_registered_location which is a string
+    -> m_profit which is a float value
+ 
+    ->A fucntion CalculateTaxAmount which returns
+        -> 10% of m_profit for PP and LLP
+        -> 15% of m_profit for PVT_LTD
+ 
+create a singleton class operations with the following functions.
+    -> data member m_objects which is a list of Variants of Employee or BusinessOwner
+    -> A non static member function CreateObjects to make at least 3 objects of each class Employee  & BussinessOwner on the 
+        stack and store them in m_objectsmember.
+
+    -> A non -static member function ReturnNInstances which takes the following parameters
+            1) A positive number N
+            2) A boolean m_is_data_required_In_reverse
+        
+        A return a container of variants for first or last N instaces from the input depending on whether the m_is_data_required_In_reverse
+        set to false or true
+
+    -> A function to return the m_eid value of the employee with the highest m_salary value.
+
+    -> A function to display the output of CalculateTaxAmount for all BussinessOwner instances in the m_object data member .
+
+    -> A function to check whether the CalculatePF function returns a value above 5000 for all employee objects in the m_objects 
+    data member {return boolean accordingle/]}

@@ -1,0 +1,42 @@
+Smart Pointers : these are those types of pointers that use the concept of "Scope Based 
+                Resource Management"(formally called RAII)
+                a) Unique Pointer
+                b) Shared Pointer(most common)
+                c) Weak Pointer
+
+
+
+SYntax - 
+Old ==> Engine e1(400 , 150.f);
+        Engine* ptr = new Engine(400 , 150.f);
+
+New ==> 
+    Option1)  ==>  std::shared_ptr<Engine> ptr = std::shared_ptr(new Engine(400 , 150.f));
+    Option2)  ==>  std::shared_ptr<Engine> ptr1 = std::make_shared<Engine>(400 , 150.f);
+
+
+Option 0 --> Engine* ptr = new Engine(400 , 150.f);
+             std::shared_ptr<Engine> sptr = std::shared_ptr<Engine>(ptr)
+
+             ISSUE --> delete ptr ;
+                        Then sptr out of the scope , delete is again --[double free]
+
+
+
+
+Version 1 : Program that works , has no leaks but is completely structured with only function[main()]
+
+
+[SOR == system of responsibilities]
+Version 2 : Program that works , has no leaks and divides operations across seperate function 
+
+Version 3 : Create a class so that Version 2 can be implemented in OOP 
+            a) All function from v2 become member function 
+            b) You can create encapsulated data members 
+            c) Overload neccessary operators for input & output 
+        
+Version 4 : Version 3 implemented with shared pointers
+
+valgrind --leak-check=yes  <path of output file>
+
+Example---->   valgrind --leak-check=yes ./app < input.txt

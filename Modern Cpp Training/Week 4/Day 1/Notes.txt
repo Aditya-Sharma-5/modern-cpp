@@ -1,0 +1,89 @@
+
+
+
+Array
+
+[101  Harshit 27]   [ 102  Aditya  22 ]    [103  Ayushi  23]
+
+
+
+Contiguous and sequential 
+
+[101  Harshit 27]   [ 102  Aditya  22 ]    [103  Ayushi  23]
+   0X100                  0X132                 0X164
+
+pro : Readind data is efficient . We can access random location also 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Vector :
+
+  [101  Harshit 27]   [ 102  Aditya  22 ]    [103  Ayushi  23]    /////
+      0X100                  0X132                 0X164         0X195H
+
+ when it require , it expands its size by copying the data on another location 
+
+  [101  Harshit 27]   [ 102  Aditya  22 ]    [103  Ayushi  23]   [       ]   [         ]  [       ]  /////
+      0X700                  0X732                 0X764           0X195H
+
+copy : 
+1) allocate space for the new copy (malloc / sbrk / brk [system calls!])
+2) Replicate /Copy construct new objects
+3) Deallocate / delete old location's objects.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Doubly Linked List :
+
+
+  [nullptr | 101  Harshit 27 | 0X772  ]   [ 0X700 | 102  Aditya  22 | 0X764 ]    [ 0X772 | 103  Ayushi  23 | 0X195H]   [       ]   [         ]  [       ]  /////
+             0X700                                   0X772                                   0X764                       0X195H
+
+
+    --->  Low performance in accessing data [reading purpose]
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+HASHTABLE :
+
+    Hash FUnction : It is a mathematical operation that directly / indirectly determines the location of data in the 
+                    hash table.
+
+    Hash Value/Hash : This is the result of the hash function applied on the "key" of the data .
+
+    Hash Key : This is the unique attributes of the data which can be used to determines location of the data in the
+                hash table. 
+
+
+ 
+        [101  Harshit 27]   [ 102  Aditya  22 ]    [103  Ayushi  23]
+      
+    Step 1) : [101  Harshit 27 ] , you need to ake it into hash 
+
+    Making a good hash function is very hard , so we don't need to create it 
+
+    Hash FUnction : Mod 3
+            --> 101 Mod 3 = 2         ==> goes to the 2th position
+
+    Step 2) : [102  Aditya 22 ] , 
+            ----> 102 Mod 3 = 0        ==> goes to the 0th position
+
+    
+    Step 3) : [103 Ayushi 23] 
+            ----> 103 Mod 3 = 1       ==> goes to the 1th position
+        but what if Ayushi had 104 as Id 
+
+        ----> 104 Mode 3 = 2,   which is already filled 
+        So we use chaining ,
+
+
+        [102 Aditya 22 ]  row 0
+        [              ]  row 1
+        [ [101 Harshit 27]  [104 Ayushi 23 ] ]         row 2   [Linked List ]
+
+
+    
+
+    
+

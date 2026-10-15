@@ -1,0 +1,63 @@
+Create a class called vehicle and a class called VehicleRegistrationPermit.
+Vehicle has a VehicleRegistrationPermit which is only valid as long as the vehicle is valid.
+Upon scrapping , total loss , or theft beyond recovery , the VehicleRegistrationPermit associated is made invalid 
+and has to be destroyed.
+
+
+Vehicle Class has : 
+    id , name --- string 
+    vehicle_type   ---- PRIVATE , COMMERCIAL , SPECIAL_PURPOSE
+    A POINTER TO instance of type VehicleRegistrationPermit
+
+VehicleRegistrationPermit has : 
+    permit_id string 
+    permit_issue_year int 
+    permit_issue_RTO
+
+Note: 
+    Default , copy and move semantics are disabled for 2 classes 
+    Output operator has to be overloaded 
+    overload the *operator of vehicle class VehiclePermisionPermiT  
+    -id string-
+    -issue-year-int 
+    -issue-rto-string
+ 
+functionalities
+    ---ability to create n instances of vehicle in an array where n is taken as a input
+    ---input function to accept input parameters and construct objective accodingly
+    ---a function to count vehicle instances of a vehicle type whose value is 
+       received as a parameter to the function
+    ---a function to check if all vehicle instances have permit int the same year or note
+    ---a function to return pointers to lasr n instances in the data container
+ 
+Note :Implicitly understood dellocate functionality
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+int* arr = new int[3];
+arr is a pointer (one star) , Every item in the array is an int
+
+char* arr = {'A' , 'B', 'C'};
+arr is a pointer (one star) , Every item in the array is an char
+
+arr[0X123H , 0X127H];
+arr is a pointer(one star)m , Each item in the arr is a Vehicle Pointer (one more star)
+
+
+Initializing a memory for 2D array -- 
+Vehicle** arr = new Vehicle*[N];
+
+
+
+Taking input from the file =====> ./app  <  input.txt
+
+Add break point 
+add -g befor -o
+
+
+
+extern --> the file having [extern int demo ;] means this file only have declration of this 
+            variable.

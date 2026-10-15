@@ -1,0 +1,25 @@
+I want to design a banking application which has the following abilities 
+    - Abiliy to instantiate various types of accounts 
+            - saving , current , and pensio account 
+
+    - Each account has a debit card attached . Its is optional and may not be applied for .
+    - Optionally a checque book is also available for each account. Each checque book may have 
+        multiple leaves in the book.
+    - Each cheque has a unique number 
+
+
+We expect following features from the application 
+    - Ability add a new bank account to existing account 
+    - Ability to find card , cheque book , or customer details based on account number provided 
+    - Ability to filter accounts based on conditions provided 
+    - Ability to check count of accounts meeting certain criteria provided 
+    - A menu driven approach for user to select the features 
+    - Ability to construct thread/async thread to execute each feature 
+
+Notes : 
+    - Choose the most appropriate container for operational feasibility 
+     [Note : Try to get best time complexity for operations ]
+
+    - Use custom exceptions and optional returns if applicable 
+    - Comment , designn , layout and approach are all equally importat 
+    

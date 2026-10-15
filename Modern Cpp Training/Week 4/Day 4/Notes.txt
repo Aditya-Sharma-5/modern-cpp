@@ -1,0 +1,25 @@
+Create a class Project with the following atributes 
+    - m_project_id (string) , m_project_budget(float) , m_project_team_count(integer) , 
+    - m_project_type(LONG_TERM , SHORT_TERM , POC)
+    - m_project_expected_revenue(float) , m_project_owner(string) , m_project_client(string)
+
+Create the following functionalities 
+    - A function to create at least 4 object on heap (attach to smart pointer) , Store in a sequential 
+        container of your choice 
+    - A function to count instances whose m_project_type matches the type passed as arguement
+    - A function to find m_project_budget for the project whose m_project_id matches the parameter 
+    - A function to find if 
+                        - all instances have m_project_expected_revenue above threshold passed 
+                        - at least one  m_project_expected_revenue above threshold passed 
+                        - none of the instances have m_project_expected_revenue above threshold revenue 
+                        [DIsplay the answer ]
+
+    - A function to return a container of smartpointers for instances which satisfy a user provided 
+        predicate function 
+    - A function to return a container of first N instances fromthe input data
+    - A function to return a container of last N instances fromthe input data
+    - A function to find and return the average m_project_budget
+    - A function to find the sum of m_project_expected_revenue for all instances within given range.
+      [Hint : user provide 2 numbers . Both indicates instance position sum of [2 , 3, 4, 5] ]
+    - A function to return a container of the TDS amount to be paid per project  based on the formula 
+            TDS Amount = m_project_team_count* m_project_budget*0.1f 

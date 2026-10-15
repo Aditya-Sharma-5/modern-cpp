@@ -1,0 +1,31 @@
+
+    // if you are working in by reference in bind -- use std::ref with lvalues always
+
+
+    /*
+        n1 will not be modifyable by default if it is captured by value.
+        To do so , use mutable kryword.
+    */
+    // auto f4 = [n1](){n1 = 4;};        // this gives you error
+    auto f4 = [n1]() mutable{n1 = 8;};
+    // auto f4 = [&n1](){n1 = 7;};      // or you can do this also 
+
+
+    /*
+        using = operator f5 capture all the variables of main function by valye
+        NOTE : if you want to change the value , must use MUTABLE ,, 
+        --------------because if you capture by value , it act as a constant [in lambda function]
+
+
+
+    //Note : lambda is not a function . It is an object of a class . & operator is not overloaded for it .
+    //       DO NOT USE & WITH LAMBDA FUNCTION
+    \\
+
+    // we are binding function CalculateTax m in which factor will be 0.1f , and salary will 
+    // be the arguement passed by the user 
+    auto example_1 = std::bind(&Employee::CalculateTax , &e1 ,0.1f , std::placeholders::_1 );
+    example_1(10);
+
+    // note :: JUST LIKE LAMBDA , do  not use & with static member function
+    auto example_2 = std::bind(Employee::DisplayCounter , 10);

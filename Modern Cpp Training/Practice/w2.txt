@@ -1,0 +1,126 @@
+void Adapter(const std::array<int , 5>& data , std::function<int(int)>fn){
+    for(const int val:data){
+        std::cout<<fn(val)<<"\n";
+    }
+}
+
+----------------------------------------------------------------------------------
+//transform_if
+void Adaptor(const std::array<int , 5>& arr , std::function<bool(int)>fn)
+{
+    for(const int i:arr){
+        if(fn(i)){
+            std::cout<<i<<" ";
+        }
+    }
+    std::cout<<"\n";
+}
+
+//std::transform
+void Adaptor1(const std::array<int , 5>& arr , std::function<const int(const int)>fn){
+
+    for(const int val:arr){
+        std::cout<<val<<"\n";
+    }
+    std::cout<<"\n";
+}
+
+int main(){
+    std::array<int , 5>arr{10 , 20 , 30 , 40 , 50};
+
+    Adaptor(arr , [](const int num){return (num%4 == 0);});
+
+    Adaptor(arr , [](const int num){return (num >10);});
+
+    Adaptor1(arr , [&](int num){ return  num*num;});
+}
+----------------------------------------------------------------------------------------------------------
+######################   REFERENCE WRAPPER  ###################################
+
+void CreateObject(EngineContainer &engine, VehicleContainer &vehicle)
+{
+    engine.push_back(Engine(400, 150.0f));
+    engine.push_back(Engine(550, 220.0f));
+
+    auto  itr = engine.begin();   // Here auto = std::list<Engine>::iterator
+
+    //If itr is not equal to the end of objects
+    if(itr!= engine.end()){
+    vehicle.push_back(new Vehicle("DL1987" , 80000.0f , VehicleType::PERSONAL , 2.5f , 1.2f , TransmissionType::AMT , VehicleFuelType::DIESEL,std::ref(*itr++) ));
+    }
+
+    //If itr is not equal to the end of objects
+    if(itr!= engine.end()){
+    vehicle.push_back(new Vehicle("Mh1234" , 90000.0f , VehicleType::RENTAL , 3.5f , 1.8f , TransmissionType::MANUAL , VehicleFuelType::DIESEL,std::ref(*itr++) ));
+    }
+
+}
+
+------------------------------------------------------------------------------------------------------------------
+int main(){
+    formula(10 , 20 , 30);
+    auto binded_formula = std::bind(&formula , std::placeholders::_3 , std::placeholders::_2 , std::placeholders::_1);
+    binded_formula(10 , 20 , 30);
+
+    //Note : lambda is not a function . It is an object of a class . & operator is not overloaded for it .
+
+    auto f1 = [](int num , int factor){std::cout<<num/factor<<"\n";};
+    auto binded_f1 = std::bind(f1, std::placeholders::_2 , std::placeholders::_1);
+    binded_f1(4 , 10);   // f1(10 , 4);
+
+    /////////////// Scenario 3 - parameters by reference
+    auto f2 = [](int& num , int& factor){num = 20 ; factor = 20;};
+    int p = 10 , q = 20 ;
+    auto binded_f2 = std::bind(f2 , std::ref(p) , std::ref(q));
+
+###########################  in classs  ##########################
+
+int main(){
+    // Example 1 : Hard Code factor
+    Employee e1{};
+    // we are binding function CalculateTax m in which factor will be 0.1f , and salary will 
+    // be the arguement passed by the user 
+    auto example_1 = std::bind(&Employee::CalculateTax , &e1 ,0.1f , std::placeholders::_1 );
+    example_1(10);
+
+    // note :: JUST LIKE LAMBDA , do  not use & with static member function
+    auto example_2 = std::bind(Employee::DisplayCounter , 10);
+    example_2();
+    return 0 ;
+
+}
+
+-------------------------------------------------------------------------------------------------
+
+
+###################### SHARED POINTER ##########################
+void CreateObject(EngineContainer &engine, VehicleContainer &vehicle)
+{
+    engine.push_back(Engine(400, 150.0f));
+    engine.push_back(Engine(550, 220.0f));
+    engine.push_back(Engine(520, 200.0f));
+    engine.push_back(Engine(580, 250.0f));
+
+    auto itr = engine.begin();
+
+    //If itr is not equal to the end of objects
+    if(itr!= engine.end()){
+    vehicle.push_back(std::make_shared<Vehicle>("DL1987" , 80000.0f , VehicleType::PERSONAL , 2.5f , 1.2f , TransmissionType::AMT , VehicleFuelType::DIESEL,std::ref(*itr++) ));
+    }
+
+    //If itr is not equal to the end of objects
+    if(itr!= engine.end()){
+    vehicle.push_back(std::make_shared<Vehicle>("MH1234" , 90000.0f , VehicleType::RENTAL , 3.5f , 1.8f , TransmissionType::MANUAL , VehicleFuelType::DIESEL,std::ref(*itr++) ));
+    }
+    
+    //If itr is not equal to the end of objects
+    if(itr!= engine.end()){
+    vehicle.push_back(std::make_shared<Vehicle>("UP1911" , 84000.0f , VehicleType::T_PERMIT, 2.5f , 1.2f , TransmissionType::MANUAL , VehicleFuelType::PETROL,std::ref(*itr++) ));
+    }
+
+    //If itr is not equal to the end of objects
+    if(itr!= engine.end()){
+    vehicle.push_back(std::make_shared<Vehicle>("HR6334" , 95000.0f , VehicleType::PERSONAL , 3.0f , 1.5f , TransmissionType::DC_AUTOMATIC , VehicleFuelType::ALTERNATIVE_FUEL,std::ref(*itr++) ));
+    }
+
+}

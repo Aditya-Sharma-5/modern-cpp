@@ -1,0 +1,54 @@
+20 -30
+
+
+How much time does it takes to get a haircut ??
+
+How much time does it take to get a house built for 2 floors and 5 bed rooms ?
+
+How much timw does it take to get a pizza from domino's ?
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+Time Complexity Analysis !
+    - algorithm - A way of building solution to problem 
+
+    Problem - How much time does it take to perform Linear Search on 1 million Employee 
+              object based on Employee Id?
+
+    Solution : Linear Search 
+               Binary Search 
+
+
+
+Time Complexity helps you to understand how good or bad your solution is by measuring its ORDER OF GROWTH
+
+ORDER OF GROWTH : As number of data items increased 
+    Always relate number of operations to number of input data items 
+    Note******: AN operations could be anything - operations chenges based on the algorithm
+
+    Linear Search : 
+                No of Values    |    5     | 100  |  200 |
+                ----------------|----------|------|------|
+                operations      |    5     | 100  |  200 |
+
+            for N values , ot perform operations N times 
+            Complexity is : O(n);
+
+
+
+    Binary Search : 
+                No of Values    |    5     | 100  |  200 |
+                ----------------|----------|------|------|
+                operations      |    5     | 100  |  200 |
+
+            for N values , ot perform operations N times 
+            Complexity is : O(n);
+
+
+Big-oh : O
+
+
+COnditon : 
+        I want to insert/emplace a new shared pointer to a Vehicle in a std::list Container . 
+        What 

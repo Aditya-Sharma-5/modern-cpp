@@ -1,0 +1,39 @@
+Ques 1 -> 
+        A system for employee management with the following charateristics-
+            A class with the following member attributes.
+                - id [string]
+                - name [string]
+                - Department --> Developer , HR , Marketing
+                - salary [float]
+                - location [string]
+                - experience [float]
+                - age [string]
+                - skillset [array / container of strings ]
+
+            Member function 
+                - Parametrized constructor for name , id , location
+                - Parametrized constructor for all attributes
+                - Copy and Move semantics are disabled 
+                - << operator overload 
+                - + operator for adding experience of 2 employee instance and return combined experience 
+
+            Create functionalities 
+                - Create Object which can Create atleast 3 instance of employees on heap managed by raw pointer 
+                - A function to find the average salary for employees
+                - A function to find the department of the employee and return it based on employee ID 
+                - A function to return a boolean to indicate whether all employee have experience bove 5.0 
+                - A function to return the skillset container for the employee with maximum salary . If multiple 
+                  employees have the same max salary , consider first max .
+                - A function to delete/deallocate the heap memory 
+
+
+
+unsigned long === size_t
+segmentation fault == nullptr exception
+
+int a = 5; 
+unsigned int a = 5;
+long a = 5;
+unsigned long a = 5 ==> size_t a = 5;
+
+

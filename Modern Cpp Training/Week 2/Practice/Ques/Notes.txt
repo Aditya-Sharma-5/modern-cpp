@@ -1,0 +1,12 @@
+Problem Statement
+Objective: Create an adaptor that accepts
+    1. A vector of string values by const lvalue reference. 
+    2. A function wrapper for any function with the signature
+            i. Accepts a vector of string values by const lvalue reference
+            ii. Returns void
+Invoke the adaptor mechanism for the following operations
+    1. Find all vowel characters from each item in the vector of strings
+        (Show vowels per words including duplicates)
+    2. Find and display last three characters in each word in the vector
+    3. Find first non-vowel character from each word in the vector
+Note: Vector may contain characters in both upper and lower case.

@@ -1,0 +1,43 @@
+Variation of applying function -
+    A) FUnction received is applied on all items in the data container received.We get one output per item 
+            --> Map
+    
+    B) Function received is applied on all items in the data container received.However , we receive fewer 
+       number of output than the input item count.
+            --> Example : 1, 2, 3, 4, 5, 6
+                Expected Output : Only show elements which are divisible by 3 
+
+                --> FIlter
+                [Note : The function must be a predicate(a function that returns a bool)]
+    
+    C) FUnction received is applied on all items in the data container received. Result of previous operations
+       is used for processing next item.
+
+       REDUCE
+       e.g : Summation of N items in the data container 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Topics : 
+        - Functional Programming Essential 
+        - Lambda function 
+        - std::function wrapper 
+        - function pointers
+        - reference_wrapper
+        - partial function using std::bind
+        - std::ref (maker function for reference_wrapper)
+
+
+
+
+We cannot make function into another function
+
+FIRST CLASS FUNCTION -- functions which are treated as a objects  ---[functors]
+
+auto keyword is used to create lambda function.
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+Wherever the lambda goes , all the closure data goes 

@@ -1,0 +1,36 @@
+#copy family 
+    - std::copy_if
+
+#search by condition 
+    - std::find_if
+
+#count by condition
+    std::count_if
+
+#check if true family 
+    - std::all_of , std::any_of , std::none_of
+
+#manipulate iterators
+    - std::advance , std::next
+
+#aggregation of data
+    - std::accumulate
+
+#min-max
+    - std::min_element , std::max_element
+
+#other important algorithems 
+    - std::transform , std::reverse
+
+
+
+Static Assertion Failed ----------- constructor issue (parameters)
+
+
+next takes the input iterator , copy the iterator and then perform tasks ---> means old remains same 
+        {copy happens here}
+
+WHEN THE OLD POSITION NOT MATTTERS TO YOU : YOU CAN WORK ON REFERENCE
+
+
+All function return a rvalue 

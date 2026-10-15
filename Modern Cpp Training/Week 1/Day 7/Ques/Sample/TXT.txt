@@ -1,0 +1,30 @@
+
+class CarUnit with the following attribute
+    - id of type string
+    - model_name of type string
+    - price of type float
+    - CarType which could be HATCHBAK , SEDAN , SUV
+    - copy and move semantics are disabled 
+    - output << operator should be overloaded 
+    - getter should also be generated
+
+Create functionalities.cpp 
+- A function to Create 4 objects un the stack memory and storing in a std::array 
+- FInd and return the furst N instances from the input to the user 
+- Find and return the CarType based on input Id provide by the user 
+- function to find and return the average price of all cars . 
+find and return the model_name whose car is highest.
+
+
+
+NOTES : 
+    Input Arguements 
+    Expected output 
+    Return Type 
+
+
+When you work on the array , make sure you enable the default constructor.
+In stl array , it reqires a fixed value or rvalue for the size ; so use pointer
+
+
+./app 1>output.txt 2>error.txt

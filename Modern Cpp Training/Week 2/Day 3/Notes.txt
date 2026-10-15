@@ -1,0 +1,26 @@
+create a system with the following specification
+        - An adaptor function that accepts
+            -->an array of 5 integers 
+            --> a predicate function to filter and display relevamt data from the input 
+
+        - An adaptor function that accepts
+            --> an array of 5 integers 
+            --> A unary function that can describe how data is to be transformed and display the
+                 result accordingle 
+
+        - Client Sdide functionality to 
+            -> create lambdas for filteration and mapping of operations on input 
+
+10 , 20 , 30 , 40 , 50 
+
+Use case 1) filter data based on condition 
+    example: filter and display the numbers divisible by 4 
+
+Use case 2) filter data based on condition 
+    example: filter and display the numbers greater than 10 
+
+
+Use case 3) filter data based on condition 
+    example: Transform all values into their squares.
+    
+    

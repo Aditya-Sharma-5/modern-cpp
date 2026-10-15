@@ -1,0 +1,52 @@
+Topic Covered : 
+    -- Shortcuts 
+
+
+Class Vehicle with the following attributes
+    - _vehicle_id of type string
+    - _vehicle_price of type float
+    - __vehicle_tpe PRIVATE , COMMERCIAL , DEFENSE
+    - _vehicle_model_name of type string
+
+    - enable copy Constructor
+    - enable copy Assignment
+    - disabled move assignment  & move construction
+    - parametrized Constructor
+
+
+
+ctrl + shift + p ---> open shortcut panel
+ctrl + p ----> OPen file {use arrow to move up & down}
+click Enter to open the file 
+click ctrl + Enter to open the file in split mode
+ctrl + 1 for 1st section
+ctrl + 2 for 2nd section 
+ctrl + tab to switch between tabs
+
+
+
+
+Every time you make a new class , make a new file 
+Special Member FUnction 
+a) Default Constructor
+b) Copy Constructor
+c) Move Constructor
+d) Destructor [logic to be executed IMMEDIATELY BEFORE deallocation]
+e) Copy Assignment OPerator
+f) Move Assignment OPerator
+
+
+
+Fixed number of categorical types -- Enum
+#include  < >       ----> Something already pre-installed
+#include  " "       ----> Something you made on your own
+class , enum , filename , folder name ---> pascal case
+variable name --> data member is started  from _ or m_
+
+in-class initialization ----> it allows us to provide dummy data to my member
+instance used for templates in cpp developer ---not used it for objects.
+
+Rule of Zero ---> you not need to define the six special member function (Compiler itself provide the object)
+
+Need of Rules --> Provide guidance to new seekers 
+Encapsulation is different from data binding.

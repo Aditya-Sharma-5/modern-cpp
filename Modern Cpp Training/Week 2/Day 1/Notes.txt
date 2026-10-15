@@ -1,0 +1,29 @@
+Topic Covered : 
+    Functional Programming
+
+
+Types of programming 
+    - structure oriented : Ex- C Language
+
+    - Object Oriented Programming : Inheritance , Association , etc
+            [C++ , Java , Kotlin , etc]
+        
+    - Functional Programming : 
+            - ES6 : 2015 
+                --> Lambda Function 
+                --> Higher Order Function -- A function that either accepts a function 
+                                             as a perimeter or returns a funtions or both
+                --> Function as a Object
+                --> First-Class Function
+                --> Monadas , Monoids , Functors
+
+
+find_if : Two iterators(start , end) & ONE LOGIC to be tested 
+          If logic 
+
+        
+Declarative Style Coding == Functional Programming
+
+For a function or equivalent callable = datatype will be the signature of the function
+
+Function Pointer is replaced by reference wrapper 

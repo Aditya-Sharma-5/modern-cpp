@@ -1,0 +1,97 @@
+Short Term -- 
+        - GIT - VERSION Control 
+        - Skills on Command Line  [FOcus on UNIX , LINUX]
+        - Documentation Comprehension Skills
+
+
+LONG TERM --
+    1) Operating System :   [3-4 Weeks will be enough]
+                    - Scheduling 
+                    - Paging 
+                    - Signals 
+                    - Concurrency 
+                    - Priority 
+                    - Threads 
+                    - Frames 
+
+
+    2) Computer Architecture :   [can work parallely with OS] 
+
+
+    3) Database Management System : [3 -4 Weeks Is enough]
+                    - NoSql 
+                    - Sql 
+                    - MySql 
+                    - Relational 
+                    - No - Relational
+                    - Micro Services  (Distributing the services)
+
+    4) Computer Networks :
+                    - Network Connection
+                    - Basics 
+    
+    5) Linear Data Structure : [How to use them , time complexity , implementation ]
+                    - Array                  [2-3 Weeks]
+                    - List                   [2-3 Weeks]
+                    - Vector                 []
+                    - Stack 
+                    - Queue
+                    - Priority Queue
+
+    6) Non - Linear Data Structure 
+                    - Trees 
+                    - Graph 
+    Note : Visualize the tree and graph , their implementation , Do Competative 
+    Book - Adam Drozdk (Data Structure & Algroithms in C++)
+
+
+    7) Essential Algorithems :  
+                    - DSA Algorithems
+                    - Real Life Problems 
+    Note: No need to memorize the algorithms , just find out that which algorithms helps to solve the issue
+
+    8) API Development :
+                    - REST API 
+                    - GRAPHQL
+                    
+
+    9) Competative Programming : 
+                    - Pre Requisite [DSA]
+                    - 
+    
+    10) Cloud Computing :
+                    - Create Instances 
+    
+
+    11) Containerisation : 
+                    - What , Why , How to manage 
+                    - Kubernatics K8S
+                    - Docker (Creating A Environment )
+                    - Sub-nets 
+
+                    BOOK - DOcker Deep Diver ---> Into Nigal Koltan 
+
+    12) Virtualisation 
+                    - EX - VM-WARE
+                    - FOr creating cloud instances 
+                    - What are the network modes , 
+                    - TERAFORM - Infrastructure            
+
+    13) 3 Programming Language 
+                - A language that have OOPS      ---> CPP , JAVA 
+                - A language that have scripting ---> Python , 
+                - A language that allow system language coding ----> CPP , RUST
+
+
+    14) Automation 
+                - Shell scripting
+                - Python scripting
+                - Bash scripting
+
+    15) Infrastructure :
+                - Jenkins 
+                - CI/CD Pipelines Ansible - allow you to set up the 
+                - PlayBook
+
+
+

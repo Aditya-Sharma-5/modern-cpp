@@ -1,0 +1,83 @@
+TAsk A , Task B to be executed 
+
+Task A 
+    - intstruction A1
+    - intstruction A2
+    - intstruction A3
+
+Task B 
+    - intstruction B1
+    - intstruction B2
+    - intstruction B3
+
+
+Concurrent : Task A or Task B will be started . 
+If there is any delay in the executing tasl , cpu will switch to alternate task (same core , context switch of thread)
+
+Ex : 1 Trainer - evaluating 2 solutions . 1 talent has a delay in demonstration exercise . Trainer switches to second
+        talent's demo.
+
+
+Parallel: Task A and Task B will be executing simultaneously on two seperate physical cores  independent of each other .
+
+Ex : 2 Trainer evaluating 2 solutions from 2 talents parallely 
+
+
+
+Task A 
+    - intstruction A1
+    - intstruction A2
+    - intstruction A3
+
+Option 1) Executing A2 only after A1 instruction is fully complete .
+            Execute A3 only after A2 is fully completed 
+
+        Nth instruction only starts when N-1 is fully completed
+        Synchronous Programming 
+
+Option 2) A2 can start even  before A1 is complete . A3 can even start before previous instruction complete
+
+        Nth instruction can start even before N-1 is fully completed 
+
+        Asynchronous Programming
+
+    
+
+
+
+BMW (1CR+) 
+    -> music system 
+    -> Pair phones with the car 
+    -> 
+
+We can not use get() function on future exception more than once --> Error --- Future  Already Retrieved 
+
+Broken Values --  no ft value provide 
+
+
+
+Topic : 
+    Asynchronous Programming : 
+            -->instruction N can start even before N-1 instruction complete.
+
+    Future - Promise model of communication
+
+            -->Create a pair of promise and its associated Future 
+
+            -->Always use promise object for writing/sending data
+                    & 
+            -->Future Object for reading/receiving data
+
+            --> How to choose Regular threads V/S Async Threads 
+                    a) If function return void , all parameters of the function are available at the time of thread creation
+                       & no exception are to be handled , use std::thread
+                    b) if any/all of the above cannot be guranted , use Async
+                            b1) my function throws exception , return void , all parameters are available
+                            b2) my function returns a value , no exception , all parameters are available 
+                            b3) my function returns a value , throw an  exception , all parameters are available 
+                            [THERE ARE 6 TOTAL CASES FOR ASYNC]
+
+            --> To Create exception for async threads , we use std::future_error  as base class
+
+            --> We supplement this code with std::future_errc (an enum class which provides 4 root cause of exception.We can apply sol.
+                in catch block to deal with each root cause seperately.)

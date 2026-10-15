@@ -1,0 +1,353 @@
+ctrl + shift + p ---> open shortcut panel
+ctrl + p ----> OPen file {use arrow to move up & down}
+click Enter to open the file 
+click ctrl + Enter to open the file in split mode
+ctrl + 1 for 1st section
+ctrl + 2 for 2nd section 
+ctrl + tab to switch between tabs
+
+
+
+
+Every time you make a new class , make a new file 
+Special Member FUnction 
+a) Default Constructor
+b) Copy Constructor
+c) Move Constructor
+d) Destructor [logic to be executed IMMEDIATELY BEFORE deallocation]
+e) Copy Assignment OPerator
+f) Move Assignment OPerator
+
+
+
+Fixed number of categorical types -- Enum
+#include  < >       ----> Something already pre-installed
+#include  " "       ----> Something you made on your own
+class , enum , filename , folder name ---> pascal case
+variable name --> data member is started  from _ or m_
+
+in-class initialization ----> it allows us to provide dummy data to my member
+instance used for templates in cpp developer ---not used it for objects.
+
+Rule of Zero ---> you not need to define the six special member function (Compiler itself provide the object)
+
+Need of Rules --> Provide guidance to new seekers 
+Encapsulation is different from data binding.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Topic Covered -->
+               --> Difference between enum and enum class 
+               --> Tips and tricks for VS code 
+               --> Member List Initializer
+               --> constructor deligation
+               --> nullptr 
+               --> Uniform List Initializer
+
+Difference b/w enum and enum class 
+    1) we can compare 2 enum as they both have integer values
+    2) enum can automaically converted into interger , when a function arguement needs a integer value 
+    3) without prefix , no literal should work [scope resolution]
+    4) In enum class , it returns the objects so auto conversion to integer not perform.
+
+
+### TIPS  ###
+# implicit is not good .
+# Do not look on the screen , while typing the code . [Start typing 2-3 lines in the begining ]
+# Intellisense are also not good , as they damage the syntax remembering thing.
+# Intellisense is used just like as a supporter 
+# use of 'this' keyword is redundant.
+
+ctrl + shift + l ===> Select all the occurence 
+
+
+Member List Initializer --> It allows you to map the data members to the constructor variables.
+DRY Rule ---> Don't Repeat Yourself 
+    -->constructor deligation 
+        --> For this the unique member must be initialize in the {} braces 
+        --> In place of the List Initializer , call the other or small constructor 
+    # We can't do both constructor deligation and list initializer 
+
+cpp 
+    If you declare a variable , then you must be define or initialize it also .
+
+null  = 0 ;---> no datatype
+nullptr is an object of class nullptr_t ;---> has a datatype
+Uniform List Initializer --> use to initialize or assign values.
+    int n1{11};
+    int* ptr{nullptr};
+    Dummy d1{};
+    Dummy* d1{new Dummy()};
+    ---> The {} used in place of () , because () , is used to call function
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Topic Covered : 
+                --> lvalues
+                --> rvalues
+                --> using keyword
+                -->  keyword
+                --> Function Calling :
+                                    --> Call By Value
+                                    --> Call By Reference
+                                    --> Call By POinter
+                                    
+                
+int n1 = 10 ; ====> n1 is an identifier given to a 4 byte stack memory created in the scope of main 
+                    function which is assigned an integer literal 10.
+                    -- n1 is a name given by a programmer . 
+
+                    Cpp is a strongly typed language 
+                    -- int : data type [Type]
+                    -- =   : assignment operator
+                    -- 10  : integer literal 
+
+        n1 is a name given by user representing memory of some calculable size : lvalue
+
+        rvalues calls temporary values. 
+
+lvalues have name and memory 
+rvalues have no memory and can destroy in the end of the statement's end ==> [semicolon]
+
+Literal is a symbol
+using keyword is used to give the short alternative name.
+
+linux - 1mb stack memory
+Address is a pointer and vice-versa .
+
+DO --> Pointer in c ---- freeCodeCamp
+
+
+
+/*Reasons for not using std namespace 
+    1. populates all global namespace with all identifiers from std namespace. 
+    2. make sure that compiler not gets confused 
+*/
+
+
+
+There is 3 ways of passing data from source - by value , by address , by reference.
+
+/*
+
+#######   Pass By Value ##########
+    Main FUnction 
+
+    n1
+    [ 0000 0000  0000 0000   0000 0000    0000 1010]
+    [<-------------4 byte------------------------->]
+        0X100H    0X101H       0X102H       0X103H
+
+
+
+
+    Magic Function
+    val
+    [ 0000 0000  0000 0000   0000 0000    0000 1010]
+    [<-------------4 byte------------------------->]
+        0X080H    0X081H       0X082H       0X083H
+
+    Magic is a function that accepts one integer by "value " and it returns void .
+*/
+
+
+/*
+#########  Pass By Reference #####
+    Main FUnction 
+
+    n1
+    [ 0000 0000  0000 0000   0000 0000    0000 1010]
+    [<-------------4 byte------------------------->]
+        0X100H    0X101H       0X102H       0X103H
+
+
+
+
+    Magic Function
+    val [alias of received memory location]  ==> Now val is taking 0 memory.
+
+
+
+    Symbol Table 
+    ------------
+    name     type     location     content      alias(Reference)
+    n1       int      0X1000H       10             val
+
+
+    Magic is a function that accepts one integer by "value " and it returns void .
+    val in the magic function is same as n1 in the main function.
+*/
+
+/*
+    Pointer is always 8 bytes in 64Bit
+    Pointer is always 4 bytes in 32Bit
+
+*/
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+Today 's Topic :
+                --> final Keyword
+                --> override Keyword
+                --> virtual Keyword
+                --> RESOURCES
+                --> Move Semantics
+                --> vtable -- for moving child to base class 
+
+
+Modern cpp start from 2011.
+In KPIT we uses cpp 11 , 14, 17.
+
+Try not to use c- function in cpp
+
+
+Wrappers(wrap something inside)
+    --> wrapping pointers into class [smart pointers]
+    --> wrapping function into class [function wrapper class ]
+    --> wrapping reference into class [reference_wrapper class ]
+    --> wrapping a mutex into a class [lock_guard , unique_lock , scoped_lock]
+
+Note : MOdern CPP likes to put things into boxes/wrappers.
+/*
+    RESOURCES!!!!!!!!
+        --> In a program whatever you need to acess from the system , is a resource
+
+        --> memory , os level files [file handles!!] , network connections(ports) , database connection
+        ls -lR /proc
+
+*/'
+
+/* 
+    1 million employees 
+    [   101|102|103| 104 ...........]
+
+    4 Million bytes of memory is required 
+
+    OBJECTIVE : I want to create a new data container through which all employees id are still 
+                accessible but the original data container is no longer required .
+        Approch 1 : Copy and Delete ---> not optimized . 
+                    a) The copy process is tedious!!!
+
+        Approch 2 : Move Semantics  ==> Just change the memory address . 
+            Ownership Transfer.
+            The good part is that , we not move the data ---> no os permission need for more memory 
+
+*/
+
+
+/*
+    Override Keyword:
+        when you want that compiler must check that , you only want to override the function , so 
+        the compiler checks and make sure that the function is override or not.
+
+    --> The function must be virtual for overriding it into chils class --> Runtime Polymorphism.
+
+
+    The reason that the compiler needs to go to the child to base class , so it requires vtable for the movement, And the vtable
+    is only create when the function is virtual .
+
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+unsigned long === size_t
+segmentation fault == nullptr exception
+
+int a = 5; 
+unsigned int a = 5;
+long a = 5;
+unsigned long a = 5 ==> size_t a = 5;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<-----------------------------RECAP----------------------->
+Object Oriented Programming 
+    --> creating instances/data units based on model and executing functions based on type of data 
+        e.g - creating 3 variables of class vehicle 
+    --> class , object & inheritance are NOT MANDATORY 
+        e.g - Go Programming Language 
+            - no class , no object , no inheritance 
+            - Go supports OOPs 
+            a) Data models : STRUCT
+            b) Function Receiver (pointer , value)
+
+
+///////////////////////////////////////////////////////////////////
+
+
+OOPS IN C++:
+    Scenario 1) -> I want to create data based on layour/model . 
+                
+                  I should be able to control basic operations on this new type of data 
+                    - whether it gets copied or not . 
+                    - how operators interact with operands of this type 
+                        <<obj , obj1 + obj2  [operators overloading]
+                    - control how a new unit of data for this type is initialized 
+                        [parametrized constructor , default & delete special member constructor]
+
+    Scenario 2) -> I extend my type OR can I create a sub-type of my type 
+                    [Inheritance - extend a class by created a sub-class/child class / derived class]
+
+                class Employee : Create a sub type of Employee who can manage multiople Employee with extra attributes 
+                                 like team_size eg. Class Manager
+
+    Scenario 3) -> I want to store common attributes & functionalities in one model.This model is too generic , hence cannot 
+                   be used instanting data . I would want to create subtypes and force usage of sub-types only!
+
+                   [Abstract BAse Class : In C++ , at least one member function is pure virtual function]
+                
+    Scenario 4) -> I have data of different subtypes . HOW DO I PROCESS THEM TOGETHER 
+    [Concept of upcasting -- ]
+
+                    Manager * e1 = new Manager;
+                    HR * e2 = new HR;
+                    Manager* e3 = new Manager;
+                    std::vector <Employee*>{e1,e2,e3};
+
+    Scenario 5) -> What if I hyave followed Scenario 4 , my data is in the same cointainer , but I want to run the function that is only 
+                    applicable on a specific subtype 
+
+                    for(Employee* emp: data){
+                        if(emp is Hr ){
+                            emp.issueLetter();
+                        }
+                    }
+
+
+TASKS - 
+    Week 1 -->
+        Solve at least 1 question on OOP
+        Handling corner cases using exception 
+        Inheritance , Abstract Base Class , Dynamic Cast & upcasting (Runtime Polymorphism)
+        Composition Association [Car has a engine]
+
+    Week 2 -->
+        Aggregation Association [Car has a unit of engine , car destroyed still preserve engine ] -- [ Reference Wrapper]
+        Smart Pointers & their basics
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+int* arr = new int[3];
+arr is a pointer (one star) , Every item in the array is an int
+
+char* arr = {'A' , 'B', 'C'};
+arr is a pointer (one star) , Every item in the array is an char
+
+arr[0X123H , 0X127H];
+arr is a pointer(one star)m , Each item in the arr is a Vehicle Pointer (one more star)
+
+
+Initializing a memory for 2D array -- 
+Vehicle** arr = new Vehicle*[N];
+
+
+
+Taking input from the file =====> ./app  <  input.txt
+
+Add break point 
+add -g befor -o
+
+
+
+extern --> the file having [extern int demo ;] means this file only have declration of this 
+            variable.

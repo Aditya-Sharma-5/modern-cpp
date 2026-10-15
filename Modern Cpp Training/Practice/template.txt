@@ -1,0 +1,42 @@
+template<typename... T>
+auto PlusOperation(T... args){
+    return ( ... - args);     //Left Associativity    (((( 10 - 20 ) - 30) - 40) - 50)
+    //return ( args - ...);   // Right  Associativity    (10 - (20  -( 30 - ( 40 - 50))))
+}
+
+int main(){
+    std::cout<< PlusOperation<int>(10 , 20 , 30 , 40 , 50);
+}
+
+----------------------------------------------------------------------------------------------------------
+
+template<typename Container>
+void Display(Container& data){
+    for(int val : data){
+        std::cout<<val<<" ";
+    }
+}
+
+int main(){
+    std::list<int> data1{12, 222, 31, 12, 32};
+    std::array<int , 4>data2 {22, 12, 32, 322};
+
+    Display(data1);
+    std::cout<<"\n";
+    Display(data2);
+}
+
+-------------------------------------------------------------------------------------------------------------
+
+template <typename T>
+void DisplayValues(const std::list<T>& data){
+    for(const T val : data){
+        std::cout<<val<<" ";
+    }
+} 
+
+int main(){
+    DisplayValues<int>(std::list<int>{1 , 2, 34, 5534 ,343});
+    DisplayValues(std::list<std::string>{"Aadi" , "Prashant"});
+    return 0 ;
+}

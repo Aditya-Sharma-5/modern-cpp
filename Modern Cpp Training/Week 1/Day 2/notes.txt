@@ -1,0 +1,59 @@
+Topic Covered -->
+               --> Difference between enum and enum class 
+               --> Tips and tricks for VS code 
+               --> Member List Initializer
+               --> constructor deligation
+               --> nullptr 
+               --> Uniform List Initializer
+
+
+Problem 2 -- Class Employee with following attribute -
+    --Employ id (int )
+    --employ NAme (string)
+    -- Employee salary (float )
+    -- Aconstructor to initailize all members;
+    -- employee department which could be (HR , FLM , ADMIN . IT)
+    -- Default constructor which initailize default/dummy values
+    --Disable copy and move semantics 
+    -- getter and setter 
+    -<<operator to display 
+
+
+
+
+
+Difference b/w enum and enum class 
+    1) we can compare 2 enum as they both have integer values
+    2) enum can automaically converted into interger , when a function arguement needs a integer value 
+    3) without prefix , no literal should work [scope resolution]
+    4) In enum class , it returns the objects so auto conversion to integer not perform.
+
+
+### TIPS  ###
+# implicit is not good .
+# Do not look on the screen , while typing the code . [Start typing 2-3 lines in the begining ]
+# Intellisense are also not good , as they damage the syntax remembering thing.
+# Intellisense is used just like as a supporter 
+# use of 'this' keyword is redundant.
+
+ctrl + shift + l ===> Select all the occurence 
+
+
+Member List Initializer --> It allows you to map the data members to the constructor variables.
+DRY Rule ---> Don't Repeat Yourself 
+    -->constructor deligation 
+        --> For this the unique member must be initialize in the {} braces 
+        --> In place of the List Initializer , call the other or small constructor 
+    # We can't do both constructor deligation and list initializer 
+
+cpp 
+    If you declare a variable , then you must be define or initialize it also .
+
+null  = 0 ;---> no datatype
+nullptr is an object of class nullptr_t ;---> has a datatype
+Uniform List Initializer --> use to initialize or assign values.
+    int n1{11};
+    int* ptr{nullptr};
+    Dummy d1{};
+    Dummy* d1{new Dummy()};
+    ---> The {} used in place of () , because () , is used to call function

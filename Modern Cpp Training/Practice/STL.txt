@@ -1,0 +1,110 @@
+
+    float total2 = std::accumulate(
+        data2.begin(),
+        data2.end(),
+        0.0f,
+        [](float answer_upto_current_point , const Vehicle* v){return answer_upto_current_point +v->seatCount();}
+    );
+    std::cout<<" Raw Pointer Total Seat Count : "<<total2<<"\n";
+
+---------------------------------------------------------------------------------------
+    auto itr = data1.begin();
+    std::advance(
+        // data1.begin(),  // it gives error , as it works only lvalve
+        itr,
+        2                  // jump by 2 position
+    );
+
+    float total =  std::accumulate(
+        itr,
+        data1.end(),
+        0.0f,
+        [](float answer_upto_current_position , const Vehicle& v){return answer_upto_current_position + v.price();}
+    );
+    std::cout<<"The Total price of last 3 objects : "<<total<<"\n";
+
+----------------------------------------------------------------------------------------------
+
+    //Smart Pointers
+    bool flag3 = std::all_of(
+        data3.begin(),
+        data3.end(),
+        [](const Vptr& v){return v->seatCount()>4;}
+    );
+    std::cout<<" Smart Pointers Objects : "<<std::boolalpha<<flag3<<"\n";
+
+-----------------------------------------------------------------------------------------------
+
+    //Smart Pointers
+    bool flag3 = std::any_of(
+        data3.begin(),
+        data3.end(),
+        [](const Vptr& v){return v->seatCount()>4;}
+    );
+    std::cout<<" Smart Pointers Objects : "<<std::boolalpha<<flag3<<"\n";
+
+------------------------------------------------------------------------------------------------
+
+    auto itr = data3.begin();
+    std::advance(itr , 2);
+    // Now this will copy 3rd & 4th object of data3 into result3
+    std::copy_n(
+        itr,
+        2,
+        std::inserter(result3 , result3.begin())
+    );
+
+    std::copy_if(
+        data1.begin(),
+        data1.end(),
+        std::inserter(result1 , result1.begin()),
+        [](const Vehicle& v){return v.price()>80000;}
+    );
+
+--------------------------------------------------------------------------------------------------
+
+    std::size_t count3 = std::count_if(
+        data3.begin(),
+        data3.end(),
+        [](const Vptr& v){return v->seatCount()>4;}
+    );
+    std::cout<<"Count of Smart Pointers Objects : "<<count3<<"\n";
+
+--------------------------------------------------------------------------------------------------
+
+    auto itr2 = std::find_if(
+        data3.begin(),
+        data3.end(),
+        [](const Vptr& v){return v->id() == 103;}
+    );
+    if(itr2 != data3.end()){
+        std::cout<<"Price of the Vehicle  with this id is : "<<(*itr2)->price()<<"\n";
+    }
+    else{
+        std::cerr<<"Id not found\n";
+    }
+
+----------------------------------------------------------------------------------------------------
+
+    auto itr2 = std::max_element(
+        data3.begin(),
+        data3.end(),
+        // v1 will be lesser compared to v2 
+        // if and only if v1's price is lesser than v2's price
+        [](const Vptr& v1 , const Vptr& v2){return v1->price()< v2->price();}
+    );
+    std::cout<<" Smart Pointer Objects Maximum Price : "<<(*itr2)->price()<<"\n";
+    std::cout<<" Smart Pointer Objects Id of Maximum Price : "<<(*itr2)->id()<<"\n";
+
+----------------------------------------------------------------------------------------------------
+
+    std::transform(
+        data3.begin(),
+        data3.end(),
+        std::inserter(result3 , result3.begin()) ,
+        [](const Vptr& v){return v->price()*0.9f;}
+    );
+    std::cout<<"Answer of Shared Pointer Objects : ";
+
+----------------------------------------------------------------------------------------------------
+

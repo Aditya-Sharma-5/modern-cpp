@@ -1,0 +1,8 @@
+#ifndef AUTOMOBILECATEGORY_H
+#define AUTOMOBILECATEGORY_H
+
+enum class AutomobileCategory{
+    PERSONAL , SPECIAL_PURPOSE , COMMERCIAL
+};
+
+#endif // AUTOMOBILECATEGORY_H

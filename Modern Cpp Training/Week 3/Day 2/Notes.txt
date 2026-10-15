@@ -1,0 +1,23 @@
+Delay : Hold in the completion in execution.
+    Types : 1) I/O delay 
+            2) CPU- Bound Task    : CPU taking time to complete execution.
+
+
+
+
+2.4 GHZ : 2.4*10 to the power of 9 instruction per second.
+
+
+Always check [thread.joinable()]
+must not join the thread more than one .
+Default threads are not joinable. 
+
+Race Condition : When same memory location is accessd by more than 1 thread for write operation
+
+
+Synchronization Primitives:
+    - Special objects that are implemented at the OS level (using signals and other concepts) which can
+      be used to Synchronize(coordinate) two or more threads.
+
+
+Branching! 

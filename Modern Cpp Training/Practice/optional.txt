@@ -1,0 +1,33 @@
+
+std::optional<std::list<int> > FIndOddNUmber(std::list<int>& data){ 
+    if(data.empty()){
+        throw std::runtime_error("Empty Data ");
+    }
+    std::list<int> result;
+    for(int val: data){
+        if(val % 2 != 0){
+            result.push_back(val);
+        }
+    }
+    if(result.empty()){
+        return std::nullopt;
+    }
+    return result;
+}
+
+int main(){
+    std::list<int> l1{1 , 2, 3, 4, 5};
+    std::list<int> l2{6 , 2, 4};
+    std::optional<std::list<int> >  result = FIndOddNUmber(l2);
+     
+    if(result.has_value()){
+        std::list<int>valid_data = result.value();
+        for(int val:valid_data){
+            std::cout<<val<<" ";
+        }
+        std::cout<<"\n";
+    }else{
+        std::cerr<<"Function returned null!!";
+    }
+    return 0 ;
+}

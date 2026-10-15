@@ -1,0 +1,8 @@
+#ifndef VEHICLECATEGORY_H
+#define VEHICLECATEGORY_H
+
+enum class VehicleCategory{
+    PRIVATE , TRANSPORT , DEFENCE , SPECIAL_PURPOSE
+};
+
+#endif // VEHICLECATEGORY_H

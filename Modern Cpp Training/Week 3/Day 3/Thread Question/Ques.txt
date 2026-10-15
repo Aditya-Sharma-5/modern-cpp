@@ -1,0 +1,39 @@
+create a class Employee with folowing attributes:
+ 
+    -> m_eid which is a string
+    -> m_salary which is a float
+    -> m_department which is either HR,ADMIN or DEVELOPER
+    -> m_age which is a positive integer value
+    -> A fucntion CalculatePF which return
+        -> 10% of m_salary for HR and ADMIN
+        -> 20% of m_salary for DEVELOPER instaces
+ 
+create a class BusinessOwner with the following attributes:
+ 
+    -> m_registered_name which is a string value.
+    -> m_businessType which is either PVT_LTD, PP, LLP
+    -> m_business_registered_location which is a string
+    -> m_profit which is a float value
+ 
+    ->A fucntion CalculateTaxAmount which returns
+        -> 10% of m_profit for PP and LLP
+        -> 15% of m_profit for PVT_LTD
+ 
+create a singleton class operations with the following functions.
+    -> data member m_objects which is a list of Variants of Employee or BusinessOwner
+    -> A non static member function CreateObjects to make at least 3 objects of each class Employee  & BussinessOwner on the 
+        stack and store them in m_objectsmember.
+
+    -> A non -static member function ReturnNInstances which takes the following parameters
+            1) A positive number N
+            2) A boolean m_is_data_required_In_reverse
+        
+        A return a container of variants for first or last N instaces from the input depending on whether the m_is_data_required_In_reverse
+        set to false or true
+
+    -> A function to return the m_eid value of the employee with the highest m_salary value.
+
+    -> A function to display the output of CalculateTaxAmount for all BussinessOwner instances in the m_object data member .
+
+    -> A function to check whether the CalculatePF function returns a value above 5000 for all employee objects in the m_objects 
+    data member {return boolean accordingle/]}

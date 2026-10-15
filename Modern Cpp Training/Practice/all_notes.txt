@@ -1,0 +1,280 @@
+static assertion failed --- > thread syntax is not correct || thread parameters is not invalid 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Day 1::
+----------------------------future exception--------------------------
+
+#include<future>
+#include<stdexcept>
+
+class IdNotFoundError: public std::future_error
+{
+private:
+    std::string _msg;
+public:
+    IdNotFoundError(const std::string& msg , std::future_errc code)
+    :  std::future_error{code} , _msg{msg}{}
+
+    ~IdNotFoundError() {}
+    IdNotFoundError(const IdNotFoundError&) = delete;
+    IdNotFoundError(IdNotFoundError&&) = default;
+    IdNotFoundError& operator=(const IdNotFoundError&) = delete;
+    IdNotFoundError& operator=(IdNotFoundError&&) = default;
+    const char* what() const noexcept
+    {
+        return _msg.c_str();
+    };
+};
+
+
+
+-------------------- normal exception----------------------
+#include<stdexcept>
+class EmptyContainerError: public std::exception
+{
+private:
+    std::string _msg;
+public:
+    EmptyContainerError(const std::string& msg)
+    : _msg{msg} {}
+
+    ~EmptyContainerError() {}
+    EmptyContainerError(const EmptyContainerError&) = delete;
+    EmptyContainerError(EmptyContainerError&&) = default;
+    EmptyContainerError& operator=(const EmptyContainerError&) = delete;
+    EmptyContainerError& operator=(EmptyContainerError&&) = default;
+    const char* what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW
+    {
+        return _msg.c_str();
+    };
+    std::string msg() const { return _msg; }
+};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Day 2 
+
+
+void square(int& num);
+
+
+    DataContainer arr{1 , 2, 3, 4, 5};
+
+    std::thread t1(&square , std::ref(arr));
+    std::thread t2(&cube , std::ref(arr));
+
+    t1.join();   // hold the main thread and wait for t1 to signal completion/termination
+
+--------------------------------------------------------------------------------------
+    std::thread arr[2];
+    arr[0] =  std::thread(&Square , std::ref(data) , std::ref(result));
+    arr[1] =  std::thread(&Cube , std::ref(data) , std::ref(result));
+
+    for(std::thread& th : arr){
+        if(th.joinable()){
+            th.join();
+        }
+    }
+
+---------------------------------------------------------------------------------------
+
+        std::lock_guard<std::mutex> lk(mt);
+
+        --> in every cout
+
+---------------------------------------------------------------------------------------
+
+Singleton : 
+make every constructor to private : make move constructor to default 
+
+create : 
+            static class_name* m_instance;       in .h ,        class_name* class_name::m_instance {nullptr}
+
+            static class_name* get_instance();
+
+            {
+                if(m_instance){
+                    return m_instance;
+                }
+                m_instance = new class_name();
+                return m_instance;
+            }
+
+In class : std::thread t1(&class_name::function_name  , m_instance );
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Day 3
+
+std::optional<std::list<int> > FIndOddNUmber(std::list<int>& data){ 
+    if(data.empty()){
+        throw std::runtime_error("Empty Data ");
+    }
+    std::list<int> result;
+    for(int val: data){
+        if(val % 2 != 0){
+            result.push_back(val);
+        }
+    }
+    if(result.empty()){
+        return std::nullopt;
+    }
+    return result;
+}
+
+int main(){
+    std::list<int> l1{1 , 2, 3, 4, 5};
+    std::list<int> l2{6 , 2, 4};
+    std::optional<std::list<int> >  result = FIndOddNUmber(l2);
+     
+    if(result.has_value()){
+        std::list<int>valid_data = result.value();
+        for(int val:valid_data){
+            std::cout<<val<<" ";
+        }
+        std::cout<<"\n";
+    }else{
+        std::cerr<<"Function returned null!!";
+    }
+    return 0 ;
+}
+
+
+-----------------------------------------------------------------------------
+Variant 
+                   ///////  Singke Variant /////////////////
+void performOperation(std::variant<int , std::string>& v){
+    if(std::holds_alternative<int>(v)){
+        int value = std::get<0>(v);
+        std::cout<<"Square of "<<value<<" is : "<<value*value<<"\n";
+    }
+    else{
+        std::string& data = std::get<1>(v);
+        std::cout<<"Length is : "<<data.length()<<"\n";
+    }
+}
+void CommonOPeration(std::variant<int , std::string>& v){
+                                visit will oper the variant 
+                                It will find either a int or a string . Whatever is found , we will call it "val"
+
+   std::visit( [](auto&& val){std::cout<<val;}, v);
+}
+
+Main(){
+    std::variant<int , std::string> vr;
+    vr = 10 ; 
+    performOperation(vr);
+
+    vr = "Aadi";
+    performOperation(vr);
+}
+
+
+                  ///////////// Variant Container ///////////////////
+
+using Vtype = std::variant<int , std::string>;
+using Container = std::array<Vtype , 3>;
+
+void performOperation(Container& v){
+    for(Vtype v:v)
+    {
+        if(std::holds_alternative<int>(v))
+        {
+            int value = std::get<0>(v);
+            std::cout<<"Square of "<<value<<" is : "<<value*value<<"\n";
+        }
+        else
+        {
+            std::string& data = std::get<1>(v);
+            std::cout<<"Length is : "<<data.length()<<"\n";
+        }
+    }
+}
+
+void CommonOPeration(Container& v){
+    for(Vtype v: v)
+    {
+        std::visit([](auto&& val){std::cout<<val<<"\n";},v);
+    }
+}
+int main()
+    Container vr;
+    vr[0] = 10;
+    vr[1] = "Aadi";
+    vr[2] = "Be Positive";
+
+    performOperation(vr);
+    CommonOPeration(vr);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Day 5 :
+
+Async
+
+int takeInput(){
+    int num{-1};
+    std::cin>>num;
+    return num;
+}
+
+int fact(std::future<int>& ft){
+    int num = ft.get();   // We cannot proceed from this line before pr.set_value();
+    if(num<0){
+        throw std::runtime_error{"Negative Number"};
+    }
+    if(num == 0 || num ==1){
+        return 1 ;
+    }
+    int ans = 1; 
+    for(int i = 2; i<=num ; i++){
+        ans *=i;
+    }
+    return  ans ;
+}
+
+main :  
+    std::promise<int>pr;
+    std::future<int>ft = pr.get_future();
+    std::future<int>ans = std::async(&fact , std::ref(ft)); 
+    int number = takeInput();   
+    pr.set_value(number);    // this will notify the functions 
+    std::cout<<ans.get()<<"\n";
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Day 6
+
+Conditional Variable 
+
+
+    void Operation::TakeInput()
+    {
+        std::lock_guard<std::mutex>lk(m_mt);
+        std::cin>>m_value;
+        if(m_value != 0)
+        {
+            m_is_input_received= true;
+            cv.notify_one();   // Value is produced 
+        }
+    }
+
+    void Operation::Square()
+    {
+
+        std::unique_lock<std::mutex>ul(m_mt);
+        //Befor the signal will remain blocked 
+        cv.wait(ul , [&](){return m_is_input_received;});
+        std::cout<<"Square of "<<m_value<<" is : "<<m_value*m_value<<"\n";
+    }
+
+Main:
+
+    {
+        std::thread t1(&Operation::TakeInput , this);
+        std::thread t2(&Operation::Square , this);
+        std::future<int>result = std::async(&Operation::Factorial , this , 5);
+        t1.join();
+        t2.join();
+        std::cout<<result.get();
+    }

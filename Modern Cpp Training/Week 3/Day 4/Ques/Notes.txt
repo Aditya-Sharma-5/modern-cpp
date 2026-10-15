@@ -1,0 +1,39 @@
+write a program with the following attributes 
+
+An enum class features which has the folowing literals :
+    INFOTAINMENT ,
+    CLIMATE_CONTROL,
+    ADAS,
+    HYBRID_POWER , 
+    _4_WHEEL_DRIVE,
+    NCAP_RATING_5 
+
+
+
+A class Vehicle which has the following attributes:
+    -m_id which is a string value 
+    - m_price which is a float value 
+    - m-chassis_type which is MONO , LADDER or OTHER 
+    - m_vehicle category which is  PRIVATE , TRANSOIRT , DEFENCE , SPECIAL_PURPOSE
+    - m_chassis length which is a float value 
+    - m_feature which is a list of ENum class feature values 
+
+Create the following functionalities in functionalities.cpp
+    - CreateOject which can create atleast 4 objects on the heap of type vehicle . Each object must be 
+      managed by a shared pointer instance . Instance must be stored in a vector
+    - A function to display the m_chassis type of all instance whose m_id are given as parameter [ids will be 
+      passed as an input container , match ids and return m_chassis type ]
+
+    - A function to find and display the maximum m_price value from the first N instances in the input 
+            where N is given in the parameter 
+
+    - A function to display the count of Vehicle instances matching the m_vehicle_category given 
+            as input parameter 
+    
+    - A function to disply the data from the first N instances where N is given as a parameter 
+
+    - A function to prijnt a boolean to indicate if all instance have m_prices above a threshold 
+
+
+
+    

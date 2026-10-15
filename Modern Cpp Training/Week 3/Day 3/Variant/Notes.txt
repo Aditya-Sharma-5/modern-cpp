@@ -1,0 +1,11 @@
+Runtime PolyMorphism!
+
+
+variant is applicable on finite nunber of variables
+
+
+NOtes : Obj is default construct. (It will store default "Car" Object because variant always stores default version of its first type!)
+std::variant<Car, Bike> obj;
+obj = Car("101" , 980000.0f , SEDAN);
+
+When tou use a template 

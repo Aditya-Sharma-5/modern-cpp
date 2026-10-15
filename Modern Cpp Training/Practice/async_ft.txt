@@ -1,0 +1,29 @@
+int takeInput(){
+    int num{-1};
+    std::cin>>num;
+    return num;
+}
+
+int fact(std::future<int>& ft){
+    int num = ft.get();   // We cannot proceed from this line before pr.set_value();
+    if(num<0){
+        throw std::runtime_error{"Negative Number"};
+    }
+    if(num == 0 || num ==1){
+        return 1 ;
+    }
+    int ans = 1; 
+    for(int i = 2; i<=num ; i++){
+        ans *=i;
+    }
+    return  ans ;
+}
+
+main :  
+    std::promise<int>pr;
+    std::future<int>ft = pr.get_future();
+    std::future<int>ans = std::async(&fact , std::ref(ft)); 
+    int number = takeInput();   
+    pr.set_value(number);    // this will notify the functions 
+    std::cout<<ans.get()<<"\n";
+

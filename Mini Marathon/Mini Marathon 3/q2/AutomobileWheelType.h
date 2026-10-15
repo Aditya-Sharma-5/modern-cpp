@@ -1,0 +1,8 @@
+#ifndef AUTOMOBILEWHEELTYPE_H
+#define AUTOMOBILEWHEELTYPE_H
+
+enum class AutomobileWheelType{
+    REGULAR , OFF_ROAD , ULTRA_DURABLE , HYBRID
+};
+
+#endif // AUTOMOBILEWHEELTYPE_H

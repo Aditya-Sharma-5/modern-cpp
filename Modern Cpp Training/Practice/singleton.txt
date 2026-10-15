@@ -1,0 +1,19 @@
+
+Singleton : 
+make every constructor to private : make move constructor to default 
+
+create : 
+            static class_name* m_instance;       in .h ,        class_name* class_name::m_instance {nullptr}
+
+            static class_name* get_instance();
+
+            {
+                if(m_instance){
+                    return m_instance;
+                }
+                m_instance = new class_name();
+                return m_instance;
+            }
+
+In class : std::thread t1(&class_name::function_name  , m_instance );
+

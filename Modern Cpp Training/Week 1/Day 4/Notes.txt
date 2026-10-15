@@ -1,0 +1,60 @@
+Today 's Topic :
+                --> final Keyword
+                --> override Keyword
+                --> virtual Keyword
+                --> RESOURCES
+                --> Move Semantics
+                --> vtable -- for moving child to base class 
+
+
+Modern cpp start from 2011.
+In KPIT we uses cpp 11 , 14, 17.
+
+Try not to use c- function in cpp
+
+
+Wrappers(wrap something inside)
+    --> wrapping pointers into class [smart pointers]
+    --> wrapping function into class [function wrapper class ]
+    --> wrapping reference into class [reference_wrapper class ]
+    --> wrapping a mutex into a class [lock_guard , unique_lock , scoped_lock]
+
+Note : MOdern CPP likes to put things into boxes/wrappers.
+/*
+    RESOURCES!!!!!!!!
+        --> In a program whatever you need to acess from the system , is a resource
+
+        --> memory , os level files [file handles!!] , network connections(ports) , database connection
+        ls -lR /proc
+
+*/'
+
+/* 
+    1 million employees 
+    [   101|102|103| 104 ...........]
+
+    4 Million bytes of memory is required 
+
+    OBJECTIVE : I want to create a new data container through which all employees id are still 
+                accessible but the original data container is no longer required .
+        Approch 1 : Copy and Delete ---> not optimized . 
+                    a) The copy process is tedious!!!
+
+        Approch 2 : Move Semantics  ==> Just change the memory address . 
+            Ownership Transfer.
+            The good part is that , we not move the data ---> no os permission need for more memory 
+
+*/
+
+
+/*
+    Override Keyword:
+        when you want that compiler must check that , you only want to override the function , so 
+        the compiler checks and make sure that the function is override or not.
+
+    --> The function must be virtual for overriding it into chils class --> Runtime Polymorphism.
+
+
+    The reason that the compiler needs to go to the child to base class , so it requires vtable for the movement, And the vtable
+    is only create when the function is virtual .
+*/

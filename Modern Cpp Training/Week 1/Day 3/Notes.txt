@@ -1,0 +1,101 @@
+Topic Covered : 
+                --> lvalues
+                --> rvalues
+                --> using keyword
+                -->  keyword
+                --> Function Calling :
+                                    --> Call By Value
+                                    --> Call By Reference
+                                    --> Call By POinter
+                                    
+                
+int n1 = 10 ; ====> n1 is an identifier given to a 4 byte stack memory created in the scope of main 
+                    function which is assigned an integer literal 10.
+                    -- n1 is a name given by a programmer . 
+
+                    Cpp is a strongly typed language 
+                    -- int : data type [Type]
+                    -- =   : assignment operator
+                    -- 10  : integer literal 
+
+        n1 is a name given by user representing memory of some calculable size : lvalue
+
+        rvalues calls temporary values. 
+
+lvalues have name and memory 
+rvalues have no memory and can destroy in the end of the statement's end ==> [semicolon]
+
+Literal is a symbol
+using keyword is used to give the short alternative name.
+
+linux - 1mb stack memory
+Address is a pointer and vice-versa .
+
+DO --> Pointer in c ---- freeCodeCamp
+
+
+
+/*Reasons for not using std namespace 
+    1. populates all global namespace with all identifiers from std namespace. 
+    2. make sure that compiler not gets confused 
+*/
+
+
+
+There is 3 ways of passing data from source - by value , by address , by reference.
+
+/*
+
+#######   Pass By Value ##########
+    Main FUnction 
+
+    n1
+    [ 0000 0000  0000 0000   0000 0000    0000 1010]
+    [<-------------4 byte------------------------->]
+        0X100H    0X101H       0X102H       0X103H
+
+
+
+
+    Magic Function
+    val
+    [ 0000 0000  0000 0000   0000 0000    0000 1010]
+    [<-------------4 byte------------------------->]
+        0X080H    0X081H       0X082H       0X083H
+
+    Magic is a function that accepts one integer by "value " and it returns void .
+*/
+
+
+/*
+#########  Pass By Reference #####
+    Main FUnction 
+
+    n1
+    [ 0000 0000  0000 0000   0000 0000    0000 1010]
+    [<-------------4 byte------------------------->]
+        0X100H    0X101H       0X102H       0X103H
+
+
+
+
+    Magic Function
+    val [alias of received memory location]  ==> Now val is taking 0 memory.
+
+
+
+    Symbol Table 
+    ------------
+    name     type     location     content      alias(Reference)
+    n1       int      0X1000H       10             val
+
+
+    Magic is a function that accepts one integer by "value " and it returns void .
+    val in the magic function is same as n1 in the main function.
+*/
+
+/*
+    Pointer is always 8 bytes in 64Bit
+    Pointer is always 4 bytes in 32Bit
+
+*/

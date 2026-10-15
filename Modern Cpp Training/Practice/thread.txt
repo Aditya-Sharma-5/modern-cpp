@@ -1,0 +1,26 @@
+void square(int& num);
+
+
+    DataContainer arr{1 , 2, 3, 4, 5};
+
+    std::thread t1(&square , std::ref(arr));
+    std::thread t2(&cube , std::ref(arr));
+
+    t1.join();   // hold the main thread and wait for t1 to signal completion/termination
+
+--------------------------------------------------------------------------------------
+    std::thread arr[2];
+    arr[0] =  std::thread(&Square , std::ref(data) , std::ref(result));
+    arr[1] =  std::thread(&Cube , std::ref(data) , std::ref(result));
+
+    for(std::thread& th : arr){
+        if(th.joinable()){
+            th.join();
+        }
+    }
+
+---------------------------------------------------------------------------------------
+
+        std::lock_guard<std::mutex> lk(mt);
+
+        --> in every cout

@@ -1,0 +1,57 @@
+----------------------------future exception--------------------------
+
+#include<future>
+#include<stdexcept>
+
+class IdNotFoundError: public std::future_error
+{
+private:
+    std::string _msg;
+public:
+
+    IdNotFoundError(const std::string& msg , std::future_errc code)
+    :  std::future_error{code} , _msg{msg}{}
+
+    ~IdNotFoundError() {}
+
+    IdNotFoundError(const IdNotFoundError&) = delete;
+    IdNotFoundError(IdNotFoundError&&) = default;
+
+    IdNotFoundError& operator=(const IdNotFoundError&) = delete;
+    IdNotFoundError& operator=(IdNotFoundError&&) = default;
+
+    const char* what() const noexcept
+    {
+        return _msg.c_str();
+    };
+};
+
+
+
+-------------------- normal exception----------------------
+#include<stdexcept>
+class EmptyContainerError: public std::exception
+{
+private:
+    std::string _msg;
+public:
+    EmptyContainerError(const std::string& msg)
+    : _msg{msg} {}
+
+    ~EmptyContainerError() {}
+
+    EmptyContainerError(const EmptyContainerError&) = delete;
+    EmptyContainerError(EmptyContainerError&&) = default;
+
+    EmptyContainerError& operator=(const EmptyContainerError&) = delete;
+    EmptyContainerError& operator=(EmptyContainerError&&) = default;
+
+    const char* what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW
+    {
+        return _msg.c_str();
+    };
+    std::string msg() const { return _msg; }
+};
+
+
+------------------------------------------------------------------------------------------------------------

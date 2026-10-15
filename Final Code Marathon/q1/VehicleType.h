@@ -1,0 +1,9 @@
+#ifndef VEHICLETYPE_H
+#define VEHICLETYPE_H
+
+enum class VehicleType{
+    PUBLIC_TRANSPORT , COMMERCIAL , PRIVATE_VEHICLE , TEST_VEHICLE 
+};
+
+
+#endif // VEHICLETYPE_H

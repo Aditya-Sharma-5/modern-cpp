@@ -1,0 +1,50 @@
+Week 3 : 
+    --> Concurrency in Cpp 
+    --> CPP 17 
+
+
+Processor : device that execute the instruction
+Concurrency : 
+
+no of instruction execute per second -- clockCycle
+Core : more cores means more instruction done 
+       1 core execute only 1 process 
+
+SSD - Solid State Drive - no platter or needle 
+Anything which is made of flipflop is fixed .
+RAM - made up of flipflop
+
+
+Process : A task or activity which will require seperate resources (memory , files , connections,etc).
+            It is one work to be completed . Each process uses onecore for execution.
+
+
+Threads  : Smaller unit of process . Each thread is supposed to be independent . One process is made up of 
+            1 or more threads . All threads will read and write data to/from the memory.
+
+
+Example : ./app gets 100 MB RAM
+
+
+4 Core (4 Parrallel "activities" can be performed)
+
+Activity 1 : Square of a number 
+Activity 2 : Cube of a number 
+Activity 3 : Factorial of a number 
+Activity 4 : Square root of a number 
+
+
+Scenario A : 
+    1 program with the file "task.cpp"
+        - task.cpp has 4 function (one for each activity)
+
+g++ tak.cpp -o app && ./app
+
+option1) execute All function on the same core 
+Option2) "TRY TO" execute them Parrallel on seperate cores 
+OPtion3) "RUn Them COncurrently " on the same core if multiple cores not available.
+Option4) Option 1 nhi chahiye , Baki jo best best h kro .
+
+
+
+Platform -- CPU Architecture 

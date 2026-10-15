@@ -1,0 +1,124 @@
+UML [Unified Modelling Language] Diagram : Standard diagrams with industry accepted notations that describe the software systems in various ways.
+
+Ex 1) : Employee Managemant Portal 
+
+//////////////////////////           CLASS DIAGRAM      /////////////////////////////////////////////
+            a) What is the main objective ? What kind of data are we modeling?
+            b) WHat is the relationship between various entities in your software ? 
+                  Employee-Manager , Employee-Project  , Employee-Salary Account
+                    Inheritance        Aggregation          Composition
+
+            c) Do we have concrete implementations only or abstraction ? 
+
+
+/////////////////////////       USE CASE DIAGRAM        ////////////////////////////////////////////
+            d) What functionalities are we offering ? What kind of user acceses what kind of feature 
+                        ex: Checking Salary deduction [All Employee]
+                        ex: Issueing offer letter/Increment letter [HR]
+
+
+//////////////////////////        ACTIVITY / SEQUENTIAL DIAGRAM        ///////////////////////////////
+            e) What is the overall flow of the applications (start or end)?
+                    or 
+                If I focus only 1 task in the system , what is the flow for that? 
+
+
+
+
+In a class diagram , there is a member function in the functionalities section with notation "Display : void " .
+This implies : 
+                - Display can be ignored
+                - Display returns void 
+                - Display takes no parameters 
+
+
+Association -- There is no concept of inheritance in it . But there is a relationship b/w them 
+            Ex : Debit Card and Bank Account --[ Every Bank Account has a linked Debit Card ]
+            Ex : FLight and Plane ---- [Every flight has a plane ]
+        Represent by solid line only , no arrow ------------> Both the classes are aware of each other in bidirectional Association 
+        Represent by solid line , with (->)arrow --------------> Both the classes are aware of each other in 
+            uni - directional Association  . The arrow point out to the known direction 
+
+
+Interface -- Its represent by dotted lines with a unfilled arrow (Triangle)
+
+Aggregation : [has a relation -- if you destroyed the car , you not need to destroy the wheels]
+                use references
+            -->  represented by the unfilled diamond 
+            : Ex =>    [car]<>------->[wheel]
+                                     4
+
+                A car is aggregated by the 4 wheels. 
+                    diamond is point to the thing which is aggregated.
+                    arrow 
+
+Composition : Same meaning 
+            use pointers 
+            --> represented by the filled diamond
+
+            : Ex =>  [Company]<::>--------------->{Department}
+
+Notes : 1) WHen the return - type is not mentioned , assume it void 
+        2) in -- used to give context in the parameters
+        3) solid line with unfilled arrow --- represent Inheritance  ----[arrow point out to the base class ]
+        4) Italics word in the base class represent the abstract class ---(Base )
+        5) Member function in the abstract base class which is written in italics represent virtual class 
+        6) + public
+        7) # protected 
+        8) - private
+        8) ~ package
+
+
+Reflexive Class - A object of that class , may have 1 or more objects of the same class.
+
+
+
+
+////////////   use case diagram  ////////////
+
+ovals -- represnt the functionalities of the system or the use cases
+stick figures -- represent the user or actors
+solid line --- connect the sticker with functionalities   ==> Show Association 
+solid line with unfilled arrow  ==> show inheritance
+system boundary ( data within the rectangle box )  -- show that this all are within my sytem 
+
+
+
+Include relationship : Preceeding functionality is MANDATORY 
+Extend relationship  : Follow-up functionality is OPTIONAL
+
+
+arrow points to the Preceeding(already happend) one ;
+
+
+
+
+
+
+
+
+//////    ACTIVITY diagram    ////////////
+Black filled circle -- represent the beginning of the activity 
+Co-centric Cirlce with inner Black filled circle -- represent the ending of the activity 
+curved rectangular boxes -- represent the single systems of the systems.
+diamond shaped -- represent the decision 
+swim lanes --- the horizontal parts of the system 
+partition -- label of the swim lane
+flow node -- takes one inpout then have multiple outputs 
+join node -- takes multiple input then have one outputs 
+
+
+
+////////////////////     SEQUENTIAL DIAGRAM     ///////////////////////
+most advanced version of the activity diagram
+represent the sequence or steps 
+unfilled verticl rectangle represent the lifetym of the object
+dotted lines with ---X
+yellow color boxes are the lifelines.
+
+
+
+It is possible that the object called the other objects of the same class.
+
+sync = task n will only started when task (n-1) is fully completed. --- filled triangular arrow head 
+async = task n can triggered even when task (n-1) is not fully completed.--- sticky arrow head.
