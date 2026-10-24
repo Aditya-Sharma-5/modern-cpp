@@ -1,5 +1,5 @@
 ctrl + shift + p ---> open shortcut panel
-ctrl + p ----> OPen file {use arrow to move up & down}
+ctrl + p ----> Open file {use arrow to move up & down}
 click Enter to open the file 
 click ctrl + Enter to open the file in split mode
 ctrl + 1 for 1st section

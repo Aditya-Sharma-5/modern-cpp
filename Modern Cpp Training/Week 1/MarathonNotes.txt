@@ -37,7 +37,7 @@
 bind keyword : 
 
 
-A lamda is not a function , it is treated as a object callable ----------- functors
+A lambda is not a function , it is treated as a object callable ----------- functors
 
 Ques : 
 Create a class Vehicle with the following attributes 

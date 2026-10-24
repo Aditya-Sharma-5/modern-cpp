@@ -56,7 +56,7 @@ int main(){
         its parameters are received T&& args where T is the deduced type
 
         Note : In regular function with no type deduction , && means Rvalue reference 
-        void Mah=gic(int&& val)-------> val accepted as Rvalue reference 
+        void Magic(int&& val)-------> val accepted as Rvalue reference 
 
         In templated function involving type deduction , && means forward reference 
         (Unofficial means : Universal reference)

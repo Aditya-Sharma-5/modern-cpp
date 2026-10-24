@@ -26,13 +26,13 @@ OOPS IN C++:
     Scenario 2) -> I extend my type OR can I create a sub-type of my type 
                     [Inheritance - extend a class by created a sub-class/child class / derived class]
 
-                class Employee : Create a sub type of Employee who can manage multiople Employee with extra attributes 
+                class Employee : Create a sub type of Employee who can manage multiple Employee with extra attributes 
                                  like team_size eg. Class Manager
 
     Scenario 3) -> I want to store common attributes & functionalities in one model.This model is too generic , hence cannot 
                    be used instanting data . I would want to create subtypes and force usage of sub-types only!
 
-                   [Abstract BAse Class : In C++ , at least one member function is pure virtual function]
+                   [Abstract Base Class : In C++ , at least one member function is pure virtual function]
                 
     Scenario 4) -> I have data of different subtypes . HOW DO I PROCESS THEM TOGETHER 
     [Concept of upcasting -- ]

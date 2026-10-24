@@ -90,7 +90,7 @@ int main(){
     Scenario 5) : Binding static member function  .
     Scenario 6) : using bind to create new callables to meet requirements.
 
-    Applocation of bind : 
+    Application of bind : 
                     a) swap parameters of a function 
                     b)Assign a fixed , hard-coded value to a function parameter so that it is no
                       longer accepted a function call  

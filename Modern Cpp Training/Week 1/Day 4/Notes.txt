@@ -19,7 +19,7 @@ Wrappers(wrap something inside)
     --> wrapping reference into class [reference_wrapper class ]
     --> wrapping a mutex into a class [lock_guard , unique_lock , scoped_lock]
 
-Note : MOdern CPP likes to put things into boxes/wrappers.
+Note : Modern CPP likes to put things into boxes/wrappers.
 /*
     RESOURCES!!!!!!!!
         --> In a program whatever you need to acess from the system , is a resource
@@ -52,7 +52,7 @@ Note : MOdern CPP likes to put things into boxes/wrappers.
         when you want that compiler must check that , you only want to override the function , so 
         the compiler checks and make sure that the function is override or not.
 
-    --> The function must be virtual for overriding it into chils class --> Runtime Polymorphism.
+    --> The function must be virtual for overriding it into child class --> Runtime Polymorphism.
 
 
     The reason that the compiler needs to go to the child to base class , so it requires vtable for the movement, And the vtable

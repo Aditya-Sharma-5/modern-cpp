@@ -34,7 +34,7 @@ This implies :
 
 Association -- There is no concept of inheritance in it . But there is a relationship b/w them 
             Ex : Debit Card and Bank Account --[ Every Bank Account has a linked Debit Card ]
-            Ex : FLight and Plane ---- [Every flight has a plane ]
+            Ex : Flight and Plane ---- [Every flight has a plane ]
         Represent by solid line only , no arrow ------------> Both the classes are aware of each other in bidirectional Association 
         Represent by solid line , with (->)arrow --------------> Both the classes are aware of each other in 
             uni - directional Association  . The arrow point out to the known direction 
@@ -58,7 +58,7 @@ Composition : Same meaning
 
             : Ex =>  [Company]<::>--------------->{Department}
 
-Notes : 1) WHen the return - type is not mentioned , assume it void 
+Notes : 1) When the return - type is not mentioned , assume it void 
         2) in -- used to give context in the parameters
         3) solid line with unfilled arrow --- represent Inheritance  ----[arrow point out to the base class ]
         4) Italics word in the base class represent the abstract class ---(Base )

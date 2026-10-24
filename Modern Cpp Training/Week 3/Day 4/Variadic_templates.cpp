@@ -3,7 +3,7 @@
             Write algorithms which are type agnostic! [not specific to a type]
 
     Recursion : 
-            So;ve problem by dividing them into smaller versions of similiar problems
+            Solve problem by dividing them into smaller versions of similiar problems
 
     Variadic Templates : TEMPLATES + RECURSION
     [NOT GOOD , HORRIBLE SYNTAX]
@@ -23,7 +23,7 @@ T PlusOperation(T arg){
 /*
     PlusOperation takes 2 parameters 
     
-    FIrst parameter named as n1 
+    First parameter named as n1 
     All other parameters are collected together in some container in the backend . This container is of 
     type REMAINING
 

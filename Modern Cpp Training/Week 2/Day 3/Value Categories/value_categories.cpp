@@ -35,7 +35,7 @@ void Magic3(int&& val);
 
 /*
         I want to use rvalue and lvalue both types.
-        Tf type is movable than use rvalue semantics , if not use copy semantics 
+        If type is movable than use rvalue semantics , if not use copy semantics 
         In any case , do not allow modification of received parameter
 */
 void Magic4(const int& val);

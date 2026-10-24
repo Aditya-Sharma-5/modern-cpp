@@ -1,5 +1,5 @@
 /*
-    1)  Resources are used in soecific sections of the program.
+    1)  Resources are used in specific sections of the program.
             e.g : I want to save data from the frontend into my database
                 -> Save Data(Employee obj )
                 ->connect to data , fetch the data , create query , commit , close ;

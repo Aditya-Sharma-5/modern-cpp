@@ -13,7 +13,7 @@ void Adapter(const std::array<int , 5>& data , std::function<int(int)>fn){
 
 #endif // FUNCTIONALITY_H
 /*
-    std::function<void(int)>fn ==> fn is a wrapper that can accept any function with the following sognatures 
+    std::function<void(int)>fn ==> fn is a wrapper that can accept any function with the following signatures 
                                         - input parameter int by value 
                                         - return type void
 

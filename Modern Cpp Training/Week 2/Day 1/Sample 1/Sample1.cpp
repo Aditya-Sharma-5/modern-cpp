@@ -37,7 +37,7 @@ int factorial(int num){
 
 int main(){
 
-    // FUnction pointer
+    // Function pointer
     int (*fn)(int) = &square;      //int square(int num)
     // fn(10)  == square(10) both are same
 

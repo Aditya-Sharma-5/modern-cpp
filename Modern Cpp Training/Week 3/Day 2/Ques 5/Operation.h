@@ -18,7 +18,7 @@
 /*
     Singleton Class:
         step 1) need a static data member
-        step 2) Move all constructor to rivate , so that no one will able to create objects
+        step 2) Move all constructor to private , so that no one will able to create objects
 */
 
 class Operation

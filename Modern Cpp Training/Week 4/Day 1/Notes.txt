@@ -47,7 +47,7 @@ Doubly Linked List :
 
 HASHTABLE :
 
-    Hash FUnction : It is a mathematical operation that directly / indirectly determines the location of data in the 
+    Hash Function : It is a mathematical operation that directly / indirectly determines the location of data in the 
                     hash table.
 
     Hash Value/Hash : This is the result of the hash function applied on the "key" of the data .
@@ -63,7 +63,7 @@ HASHTABLE :
 
     Making a good hash function is very hard , so we don't need to create it 
 
-    Hash FUnction : Mod 3
+    Hash Function : Mod 3
             --> 101 Mod 3 = 2         ==> goes to the 2th position
 
     Step 2) : [102  Aditya 22 ] , 

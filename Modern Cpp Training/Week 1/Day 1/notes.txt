@@ -32,8 +32,8 @@ a) Default Constructor
 b) Copy Constructor
 c) Move Constructor
 d) Destructor [logic to be executed IMMEDIATELY BEFORE deallocation]
-e) Copy Assignment OPerator
-f) Move Assignment OPerator
+e) Copy Assignment Operator
+f) Move Assignment Operator
 
 
 

@@ -6,7 +6,7 @@ Topic Covered :
                 --> Function Calling :
                                     --> Call By Value
                                     --> Call By Reference
-                                    --> Call By POinter
+                                    --> Call By Pointer
                                     
                 
 int n1 = 10 ; ====> n1 is an identifier given to a 4 byte stack memory created in the scope of main 

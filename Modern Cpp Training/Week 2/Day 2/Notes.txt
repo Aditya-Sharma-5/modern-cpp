@@ -1,5 +1,5 @@
 Variation of applying function -
-    A) FUnction received is applied on all items in the data container received.We get one output per item 
+    A) Function received is applied on all items in the data container received.We get one output per item 
             --> Map
     
     B) Function received is applied on all items in the data container received.However , we receive fewer 
@@ -7,10 +7,10 @@ Variation of applying function -
             --> Example : 1, 2, 3, 4, 5, 6
                 Expected Output : Only show elements which are divisible by 3 
 
-                --> FIlter
+                --> Filter
                 [Note : The function must be a predicate(a function that returns a bool)]
     
-    C) FUnction received is applied on all items in the data container received. Result of previous operations
+    C) Function received is applied on all items in the data container received. Result of previous operations
        is used for processing next item.
 
        REDUCE

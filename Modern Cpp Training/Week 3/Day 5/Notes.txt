@@ -12,7 +12,7 @@ Task B
 
 
 Concurrent : Task A or Task B will be started . 
-If there is any delay in the executing tasl , cpu will switch to alternate task (same core , context switch of thread)
+If there is any delay in the executing task , cpu will switch to alternate task (same core , context switch of thread)
 
 Ex : 1 Trainer - evaluating 2 solutions . 1 talent has a delay in demonstration exercise . Trainer switches to second
         talent's demo.

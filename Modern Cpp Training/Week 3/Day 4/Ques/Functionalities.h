@@ -10,7 +10,6 @@
 using Vptr = std::shared_ptr<Vehicle>;
 using DataContainer = std::vector<Vptr>;
 
-
 void CreateObject(DataContainer& data);
 
 void DisplayChassisTypeForGivenIds(const DataContainer& data , std::list<std::string> ids);
@@ -22,6 +21,5 @@ void CountVehicleOfGivenCategory(const DataContainer& data , VehicleCategory cat
 void DisplayFirstNVehicle(const DataContainer& data , unsigned int N);
 
 void AreAllCarPricesAboveGivenThreshold(const DataContainer& data , float threshold);
-
 
 #endif // FUNCTIONALITIES_H
